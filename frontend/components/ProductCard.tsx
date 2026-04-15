@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 
 type Props = {
@@ -90,7 +91,7 @@ export default function ProductCard({
 
       {/* View Product Button */}
 
-      <{/* Buttons */}
+      {/* Buttons */}
 
 <div className="mt-4 flex gap-2">
 
