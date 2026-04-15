@@ -1,5 +1,5 @@
 "use client"
-
+export const dynamic = "force-dynamic"
 import Footer from "../../../components/footer"
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
