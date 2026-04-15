@@ -5,46 +5,48 @@ import Link from "next/link"
 
 export default function OrderSuccess() {
 
-  const params = useSearchParams()
+  const searchParams = useSearchParams()
 
-  const orderId = params.get("id")
+  const orderId = searchParams.get("id")
 
   return (
 
-    <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-10 mt-10 text-center">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
 
-      <h1 className="text-3xl font-bold text-green-600">
+      <div className="bg-white shadow-lg rounded-xl p-10 text-center">
 
-        Order Placed Successfully 🎉
+        <h1 className="text-3xl font-bold text-green-600">
 
-      </h1>
+          Order Placed Successfully 🎉
 
+        </h1>
 
-      <p className="mt-4 text-lg">
+        <p className="mt-4 text-lg">
 
-        Your Order ID is:
+          Your Order ID:
 
-      </p>
+          <span className="font-semibold">
 
+            {" "}{orderId}
 
-      <div className="text-2xl font-semibold mt-2">
+          </span>
 
-        #{orderId}
+        </p>
+
+        <Link href="/">
+
+          <button className="mt-6 bg-blue-600 text-white px-6 py-2 rounded">
+
+            Continue Shopping
+
+          </button>
+
+        </Link>
 
       </div>
-
-
-      <Link href="/">
-
-        <button className="mt-6 bg-blue-600 text-white px-6 py-2 rounded">
-
-          Continue Shopping
-
-        </button>
-
-      </Link>
 
     </div>
 
   )
+
 }
