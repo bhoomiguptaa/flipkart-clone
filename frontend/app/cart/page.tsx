@@ -78,7 +78,7 @@ export default function CartPage() {
   // Remove product
   const removeItem = async (id: number) => {
 
-    await fetch(`http://localhost:5000/cart/${id}`, {
+    await fetch(`https://flipkart-backend1-567x.onrender.com/cart/${id}`, {
 
       method: "DELETE"
 

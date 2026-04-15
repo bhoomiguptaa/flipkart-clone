@@ -13,7 +13,7 @@ export default function OrdersPage() {
 
   useEffect(() => {
 
-    fetch("http://localhost:5000/orders")
+    fetch("https://flipkart-backend1-567x.onrender.com/orders")
       .then(res => res.json())
       .then(data => setOrders(data))
 
