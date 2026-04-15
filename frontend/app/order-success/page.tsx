@@ -8,7 +8,6 @@ import Link from "next/link"
 export default function OrderSuccess() {
 
   const searchParams = useSearchParams()
-
   const orderId = searchParams.get("id")
 
   return (
