@@ -96,28 +96,29 @@ export default function ProductCard({
 <div className="mt-4 flex gap-2">
 
   <button
-    onClick={() => {
-      const existingCart =
-        JSON.parse(localStorage.getItem("cart") || "[]")
+    onClick={async () => {
 
-      const newItem = {
-        id,
-        name,
-        price,
-        images,
-        rating,
-        discount
-      }
+  await fetch("https://flipkart-backend1-567x.onrender.com/cart", {
 
-      existingCart.push(newItem)
+    method: "POST",
 
-      localStorage.setItem(
-        "cart",
-        JSON.stringify(existingCart)
-      )
+    headers: {
+      "Content-Type": "application/json"
+    },
 
-      alert("Added to cart 🛒")
-    }}
+    body: JSON.stringify({
+      id,
+      name,
+      price,
+      image: images?.[0],
+      quantity: 1
+    })
+
+  })
+
+  alert("Added to cart 🛒")
+
+}}
     className="w-1/2 bg-orange-500 hover:bg-orange-600 text-white py-2 rounded font-semibold"
   >
     Add to Cart
