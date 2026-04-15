@@ -7,8 +7,8 @@ import Link from "next/link"
 
 export default function OrderSuccess() {
 
-  const searchParams = useSearchParams()
-  const orderId = searchParams.get("id")
+  const params = useSearchParams()
+  const orderId = params.get("id")
 
   return (
 
@@ -21,9 +21,9 @@ export default function OrderSuccess() {
         </h1>
 
         <p className="mt-4 text-lg">
-          Your Order ID:
+          Order ID:
           <span className="font-semibold">
-            {" "}{orderId || "N/A"}
+            {" "}{orderId ?? "Not Available"}
           </span>
         </p>
 
