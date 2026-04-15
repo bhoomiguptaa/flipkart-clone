@@ -90,13 +90,50 @@ export default function ProductCard({
 
       {/* View Product Button */}
 
-      <Link href={`/product/${id}`}>
+      <{/* Buttons */}
 
-        <button className="mt-4 w-full bg-yellow-400 hover:bg-yellow-500 py-2 rounded font-semibold">
-          View Product
-        </button>
+<div className="mt-4 flex gap-2">
 
-      </Link>
+  <button
+    onClick={() => {
+      const existingCart =
+        JSON.parse(localStorage.getItem("cart") || "[]")
+
+      const newItem = {
+        id,
+        name,
+        price,
+        images,
+        rating,
+        discount
+      }
+
+      existingCart.push(newItem)
+
+      localStorage.setItem(
+        "cart",
+        JSON.stringify(existingCart)
+      )
+
+      alert("Added to cart 🛒")
+    }}
+    className="w-1/2 bg-orange-500 hover:bg-orange-600 text-white py-2 rounded font-semibold"
+  >
+    Add to Cart
+  </button>
+
+
+  <Link href={`/product/${id}`} className="w-1/2">
+
+    <button className="w-full bg-yellow-400 hover:bg-yellow-500 py-2 rounded font-semibold">
+
+      View Product
+
+    </button>
+
+  </Link>
+
+</div>
 
     </div>
 
