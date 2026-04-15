@@ -103,7 +103,7 @@ export default function Home() {
   </div>
 
   {/* Search Bar */}
-  className="flex items-center bg-white rounded-sm px-3 py-2 w-[550px]"
+  <div className="flex items-center bg-white rounded-sm px-3 py-2 w-[550px]">
 
     <input
       placeholder="Search for products, brands and more"
