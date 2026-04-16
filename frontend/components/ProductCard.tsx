@@ -1,4 +1,5 @@
 "use client"
+
 import Link from "next/link"
 
 type Props = {
@@ -23,7 +24,7 @@ export default function ProductCard({
 
   return (
 
-<div className="bg-white shadow-sm hover:shadow-md transition duration-200 rounded-lg p-4">
+<div className="relative bg-white shadow-sm hover:shadow-md transition duration-200 rounded-lg p-4">
 
       {/* Wishlist icon (Flipkart-style improvement) */}
 
@@ -37,7 +38,7 @@ export default function ProductCard({
       <img
         src={images?.[0] || "/placeholder.png"}
         alt={name}
-       className="h-44 mx-auto object-contain"
+        className="h-44 mx-auto object-contain"
       />
 
 
@@ -89,8 +90,6 @@ export default function ProductCard({
       </p>
 
 
-      {/* View Product Button */}
-
       {/* Buttons */}
 
 <div className="mt-4 flex gap-2">
@@ -98,30 +97,44 @@ export default function ProductCard({
   <button
     onClick={async () => {
 
-  await fetch("https://flipkart-backend1-567x.onrender.com/cart", {
+      try {
 
-    method: "POST",
+        const res = await fetch(
+          "https://flipkart-backend1-567x.onrender.com/cart",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              name,
+              price,
+              image: images?.[0],
+              quantity: 1
+            })
+          }
+        )
 
-    headers: {
-      "Content-Type": "application/json"
-    },
+        const data = await res.json()
 
-    body: JSON.stringify({
-      id,
-      name,
-      price,
-      image: images?.[0],
-      quantity: 1
-    })
+        console.log(data)
 
-  })
+        alert("Added to cart 🛒")
 
-  alert("Added to cart 🛒")
+      } catch (err) {
 
-}}
+        console.error(err)
+
+        alert("Cart failed ❌")
+
+      }
+
+    }}
     className="w-1/2 bg-orange-500 hover:bg-orange-600 text-white py-2 rounded font-semibold"
   >
+
     Add to Cart
+
   </button>
 
 
