@@ -502,14 +502,10 @@ app.post("/order", async (req, res) => {
     "INSERT INTO orders(address) VALUES($1) RETURNING id",
     [address]
   )
-  
-
-  /* CLEAR CART AFTER ORDER */
 
   await pool.query("DELETE FROM cart")
 
   res.json({
-    message: "Order placed successfully",
     orderId: result.rows[0].id
   })
 
