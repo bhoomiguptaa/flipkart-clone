@@ -1,5 +1,7 @@
 "use client"
 
+export const dynamic = "force-dynamic"
+
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 
@@ -20,25 +22,16 @@ export default function OrderSuccess() {
         </h1>
 
         <p className="mt-4 text-lg">
-
           Order ID:
-
           <span className="font-semibold">
-
-            {" "} {orderId ? orderId : "Not Available"}
-
+            {" "} {orderId ?? "Not Available"}
           </span>
-
         </p>
 
         <Link href="/">
-
           <button className="mt-6 bg-blue-600 text-white px-6 py-2 rounded">
-
             Continue Shopping
-
           </button>
-
         </Link>
 
       </div>
