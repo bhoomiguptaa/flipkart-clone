@@ -27,6 +27,15 @@ CREATE TABLE IF NOT EXISTS cart (
 .then(() => console.log("Cart table ready"))
 .catch(err => console.log(err))
 
+pool.query(`
+CREATE TABLE IF NOT EXISTS orders (
+  id SERIAL PRIMARY KEY,
+  address TEXT
+)
+`)
+.then(() => console.log("Orders table ready"))
+.catch(err => console.log(err))
+
 
 /* PRODUCTS DATA */
 
