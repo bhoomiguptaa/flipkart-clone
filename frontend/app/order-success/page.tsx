@@ -1,5 +1,4 @@
 "use client"
-
 export const dynamic = "force-dynamic"
 
 import { useSearchParams } from "next/navigation"
@@ -24,7 +23,8 @@ export default function OrderSuccess() {
         <p className="mt-4 text-lg">
           Order ID:
           <span className="font-semibold">
-            {" "} {orderId ?? "Not Available"}
+            {" "}
+            {orderId}
           </span>
         </p>
 
