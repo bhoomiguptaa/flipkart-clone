@@ -39,26 +39,27 @@ export default function CheckoutPage() {
 
   const placeOrder = async () => {
 
-    if (!address) {
-      alert("Please enter address")
-      return
-    }
-
-    const response = await fetch(
-      "https://flipkart-backend1-567x.onrender.com/order",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ address })
-      }
-    )
-
-    const data = await response.json()
-
-    router.push(`/order-success?id=${data.orderId}`)
+  if (!address) {
+    alert("Please enter address")
+    return
   }
+
+  const response = await fetch(
+    "https://flipkart-backend1-567x.onrender.com/order",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ address })
+    }
+  )
+
+  const data = await response.json()
+
+  window.location.href = `/order-success?id=${data.orderId}`
+
+}
 
 
   return (
