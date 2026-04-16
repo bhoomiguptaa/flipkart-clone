@@ -1,14 +1,14 @@
-"use client"
 export const dynamic = "force-dynamic"
 
-import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 
-export default function OrderSuccess() {
+export default function OrderSuccess({
+  searchParams,
+}: {
+  searchParams: { id?: string }
+}) {
 
-  const params = useSearchParams()
-
-  const orderId = params.get("id")
+  const orderId = searchParams?.id
 
   return (
 
@@ -23,8 +23,7 @@ export default function OrderSuccess() {
         <p className="mt-4 text-lg">
           Order ID:
           <span className="font-semibold">
-            {" "}
-            {orderId}
+            {" "} {orderId}
           </span>
         </p>
 
