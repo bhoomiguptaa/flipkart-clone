@@ -2,110 +2,118 @@
 
 ## Project Overview
 
-This project is a Flipkart-style e-commerce web application built as part of the SDE Intern Fullstack Assignment.
-It replicates core Flipkart functionality including product browsing, cart management, checkout flow, and order placement.
+This project is a Flipkart-style e-commerce web application built as part of the **SDE Intern Fullstack Assignment**.
 
-The application focuses on real-world architecture, database schema design, and UI similarity to Flipkart.
+It replicates core Flipkart functionality including:
 
----
+• Product browsing
+• Cart management
+• Checkout flow
+• Order placement
+• Order history tracking
 
-# Tech Stack
-
-Frontend:
-
-* Next.js (React)
-* Tailwind CSS
-
-Backend:
-
-* Node.js
-* Express.js
-
-Database:
-
-* PostgreSQL
-
-Deployment:
-
-* Frontend: Vercel
-* Backend: Render
+The application demonstrates full-stack architecture using **Next.js, Express.js, and PostgreSQL** with deployment on **Vercel and Render**.
 
 ---
 
-# Features Implemented
+## Live Deployment Links
 
-## Product Listing Page
+Frontend (Vercel):
 
-* Flipkart-style product grid layout
-* Search products by name
-* Filter products by category
-* Ratings display
-* Discount badges
-* Stock availability indicator
+https://flipkart-clone-e78w.vercel.app/
 
----
+Backend API (Render):
 
-## Product Detail Page
-
-* Image carousel with thumbnails
-* Product description
-* Specifications table
-* Price + discount display
-* Stock status indicator
-* Add to Cart button
-* Buy Now button
+https://flipkart-backend1-567x.onrender.com/products
 
 ---
 
-## Shopping Cart
+## Tech Stack
 
-* View added products
-* Increase quantity
-* Decrease quantity
-* Remove products
-* Cart subtotal calculation
-* Cart total calculation
+Frontend
+
+• Next.js (React)
+• Tailwind CSS
+
+Backend
+
+• Node.js
+• Express.js
+
+Database
+
+• PostgreSQL (Render)
+
+Deployment
+
+• Frontend → Vercel
+• Backend → Render
 
 ---
 
-## Checkout Flow
+## Features Implemented
 
-* Shipping address form
-* Order summary preview
-* Place order functionality
-* Order confirmation page
-* Unique order ID generated
+### Product Listing Page
+
+• Flipkart-style product grid layout
+• Search products by name
+• Filter products by category
+• Ratings display
+• Discount badges
+• Stock availability indicator
 
 ---
 
-# Database Schema
+### Product Detail Page
 
-The database contains the following tables:
+• Image carousel with thumbnails
+• Product description
+• Specifications table
+• Price + discount display
+• Stock status indicator
+• Add to Cart button
+• Buy Now button
 
-users
-products
-cart
-orders
-order_items
+---
 
-Relationships:
+### Shopping Cart
 
-users → cart
-users → orders
-orders → order_items
-products → order_items
+• View added products
+• Increase quantity
+• Decrease quantity
+• Remove products
+• Cart subtotal calculation
+• Cart total calculation
+
+---
+
+### Checkout Flow
+
+• Shipping address form
+• Order summary preview
+• Place order functionality
+• Order confirmation page
+• Unique order ID generated
+
+---
+
+## Database Schema
+
+PostgreSQL tables used:
+
+• cart
+• orders
 
 Supports:
 
-* Multiple product images
-* Specifications stored in JSON
-* Stock tracking
-* Quantity tracking
-* Order history structure
+• Quantity tracking
+• Order placement
+• Order history storage
+• Automatic cart clearing after order placement
 
 ---
 
-# API Routes
+## API Routes
 
 Products
 
@@ -126,22 +134,22 @@ GET /orders
 
 ---
 
-# Assumptions Made
+## Assumptions Made
 
-* A default user is assumed to be logged in
-* Authentication was not required as per assignment instructions
-* Sample product data was seeded manually
-* PostgreSQL JSON fields used for specs and images
+• A default user is assumed to be logged in
+• Authentication not required as per assignment instructions
+• Sample product data seeded in backend
+• PostgreSQL used for cart and orders storage
 
 ---
 
-# How to Run Locally
+## How to Run Locally
 
 Clone repository
 
-git clone <your-repo-link>
+git clone <your-repository-link>
 
-Install frontend dependencies
+Install dependencies
 
 npm install
 
@@ -159,22 +167,25 @@ http://localhost:3000
 
 ---
 
-# Deployment Links
+## Example Test Routes
 
-Frontend:
-
-(Add Vercel link here)
-
-Backend:
-
-(Add Render link here)
+/cart
+/checkout
+/orders
+/order-success?id=12
 
 ---
 
-# Future Improvements (Bonus Scope)
+## Future Improvements (Bonus Scope)
 
-* User authentication
-* Wishlist feature
-* Order history dashboard
-* Email notifications
-* Payment gateway integration
+• User authentication
+• Wishlist feature
+• Order history dashboard
+• Email notifications
+• Payment gateway integration
+
+---
+
+## Author
+
+Developed by **Bhoomi**
