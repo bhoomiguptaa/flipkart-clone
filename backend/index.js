@@ -10,12 +10,22 @@ app.use(express.json())
 /* PostgreSQL connection */
 
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "flipkart",
-  password: "1234",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
 })
+pool.query(`
+CREATE TABLE IF NOT EXISTS cart (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  price INTEGER,
+  image TEXT,
+  quantity INTEGER
+)
+`)
+.then(() => console.log("Cart table ready"))
+.catch(err => console.log(err))
 
 
 /* PRODUCTS DATA */
